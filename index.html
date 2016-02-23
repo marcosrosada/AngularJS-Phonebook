@@ -11,8 +11,17 @@
 <body ng-controller="contactsCtrl">
 
 	<div class="jumbotron">
-		<h4 ng-bind="title"></h4>
+		<h3 ng-bind="title"></h3>
 		
+		<table class="table table-striped">
+			<tr>
+				<th>Name</th>
+				<th>Phone</th>
+			</tr>
+			<tr ng-repeat="item in listContacts">
+				<td>{{item.name}}</td>
+				<td>{{item.number}}</td>
+			</tr>
 	</div>
 	
 
