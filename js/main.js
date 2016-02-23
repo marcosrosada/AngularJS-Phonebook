@@ -1,4 +1,4 @@
-app = angular.module("Application", []);
+app = angular.module("Application", ["ngMessages"]);
 
 app.controller("contactsCtrl", function($scope){
 

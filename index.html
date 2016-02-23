@@ -5,6 +5,7 @@
 	<title>Phonebook</title>
 
 	<script src="./node_modules/angular/angular.min.js"></script>
+	<script src="./node_modules/angular-messages/angular-messages.js"></script>
 	<script src="./js/main.js"></script>
 	<link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
 	<link rel="stylesheet" href="./css/style.css">
@@ -41,12 +42,15 @@
 			</select>
 		</form>
 		
-		<div ng-show="contactForm.name.$error.required && contactForm.name.$dirty" class="alert alert-danger">
-			Prencha o campo None!
+		<div ng-messages="contactForm.name.$error && contactForm.name.$dirty" class="alert alert-danger">
+			<div ng-message="required" >
+				Prencha o campo None!
+			</div>
+			<div ng-message="minlength">
+				O campo Nome deve ter no mínimo 10 caracteres!
+			</div>
 		</div>
-		<div ng-show="contactForm.name.$error.minlength" class="alert alert-danger">
-			O campo Nome deve ter no mínimo 10 caracteres!
-		</div>
+		
 		<div ng-show="contactForm.phone.$error.required && contactForm.phone.$dirty" class="alert alert-danger">
 			Prencha o campo Telefone!
 		</div>
