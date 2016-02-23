@@ -30,8 +30,8 @@
 
 		<input type="text" class="form-control" ng-model="contact.name" 	placeholder="Name" />
 		<input type="text" class="form-control" ng-model="contact.number"	placeholder="Phone"/>
-		<select class="form-control" ng-model="contact.company" ng-options="company.name for company in companies">
-			<option value="">Select a company</option>
+		<select class="form-control" ng-model="contact.company" ng-options="company.name group by company.category for company in companies">
+			<option value="">Selecione uma operadora</option>
 		</select>
 		<button class="btn btn-primary btn-block" ng-click="addContact(contact)" ng-disabled="!contact.name || !contact.number">Add Contact</button>
 		{{contact}}

@@ -11,9 +11,11 @@ app.controller("contactsCtrl", function($scope){
 	];
 
 	$scope.companies = [
-		{ code: 14, name: "Oi"},
-		{ code: 15, name: "Vivo"},
-		{ code: 41, name: "Tim"}
+		{ code: 14, name: "Oi", category: "Celular" },
+		{ code: 15, name: "Vivo", category: "Celular" },
+		{ code: 41, name: "Tim", category: "Celular" },
+		{ code: 25, name: "GVT", category: "Fixo" },
+		{ code: 21, name: "Embratel", category: "Fixo" }
 	];
 
 	$scope.addContact = function(contact){
