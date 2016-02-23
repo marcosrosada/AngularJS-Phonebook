@@ -5,14 +5,14 @@
 
 	<script src="./node_modules/angular/angular.min.js"></script>
 	<script src="./js/main.js"></script>
+	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
 </head>
-<body>
+<body ng-controller="contactsCtrl">
 
-	<div ng-controller="contactsCtrl">
-		{{title}}
-		<ul ng-repeat="item in list">
-			<li>{{item.name + ' - ' + item.number}}</li>
-		</ul>
+	<div class="jumbotron">
+		<h4 ng-bind="title"></h4>
+		
 	</div>
 	
 

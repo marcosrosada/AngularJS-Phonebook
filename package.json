@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Phonebook webapp with AngulaJS and Bootstrap",
   "dependencies": {
-    "angular": "^1.5.0"
+    "angular": "^1.5.0",
+    "bootstrap": "^3.3.6"
   },
   "devDependencies": {},
   "repository": {

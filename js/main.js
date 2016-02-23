@@ -2,7 +2,7 @@ app = angular.module("Application", []);
 
 app.controller("contactsCtrl", function($scope){
 
-	$scope.title = "List";
+	$scope.title = "Phonebook Application";
 
 	$scope.list = [
 		{ name: "Marcos Rosada", number: +5521980147515 },
