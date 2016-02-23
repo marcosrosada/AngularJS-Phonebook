@@ -1,0 +1,28 @@
+{
+  "name": "phonebook",
+  "version": "1.0.0",
+  "description": "Pronebook webapp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcosrosada/AngularJS-Phonebook.git"
+  },
+  "keywords": [
+    "AngulasJS",
+    "Bootstrap"
+  ],
+  "author": "Marcos Rosada",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcosrosada/AngularJS-Phonebook/issues"
+  },
+  "homepage": "https://github.com/marcosrosada/AngularJS-Phonebook#readme",
+  "dependencies": {
+    "angular": "^1.5.0",
+    "bootstrap": "^3.3.6",
+    "jquery": "^2.2.1"
+  }
+}

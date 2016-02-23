@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="Application">
+<head>
+	<title>Phonebook</title>
+
+	<script src="./node_modules/angular/angular.min.js"></script>
+	<script src="./js/main.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+<body>
+
+	<div ng-controller="contactsCtrl">
+		{{title}}
+		<ul ng-repeat="item in list">
+			<li>{{item.name + ' - ' + item.number}}</li>
+		</ul>
+	</div>
+	
+
+
+</body>
+</html>
