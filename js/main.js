@@ -5,17 +5,17 @@ app.controller("contactsCtrl", function($scope){
 	$scope.title = "Phonebook Application";
 
 	$scope.listContacts = [
-		{ name: "Marcos Rosada", number: +5521980147515, color: "#990000" },
-		{ name: "Talita Vespa", number: +5521979276633, color: "#000099" },
-		{ name: "Joniorrrrrrr", number: +552799998888, color: "#CCCCCC" }
+		{ name: "Marcos Rosada", number: +5521980147515, color: "#990000", data: new Date(), company: { name: "Oi", code: 14, category: "Celular"} },
+		{ name: "Talita Vespa", number: +5521979276633, color: "#000099", data: new Date(), company: { name: "Vivo", code: 15, category: "Celular"} },
+		{ name: "Joniorrrrrrr", number: +552799998888, color: "#CCCCCC", data: new Date(), company: { name: "Tim", code: 41, category: "Celular"} }
 	];
 
 	$scope.companies = [
-		{ code: 14, name: "Oi", category: "Celular" },
-		{ code: 15, name: "Vivo", category: "Celular" },
-		{ code: 41, name: "Tim", category: "Celular" },
-		{ code: 25, name: "GVT", category: "Fixo" },
-		{ code: 21, name: "Embratel", category: "Fixo" }
+		{ code: 14, name: "Oi", category: "Celular", preco: 2 },
+		{ code: 15, name: "Vivo", category: "Celular", preco: 1 },
+		{ code: 41, name: "Tim", category: "Celular", preco: 3 },
+		{ code: 25, name: "GVT", category: "Fixo", preco: 1 },
+		{ code: 21, name: "Embratel", category: "Fixo", preco: 2 }
 	];
 
 	$scope.addContact = function(contact){
