@@ -16,12 +16,14 @@
 		<table class="table ">
 			<tr>
 				<th></th>
+				<th></th>
 				<th>Name</th>
 				<th>Phone</th>
 				<th>Company</th>
 			</tr>
 			<tr ng-repeat="contact in listContacts" ng-class="{ selected: contact.selected }">
 				<td><input type="checkbox" ng-model="contact.selected"></td>
+				<td><div style="width: 2px; height: 22px; " ng-style="{'background-color': contact.color}"></div></td>
 				<td>{{contact.name}}</td>
 				<td>{{contact.number}}</td>
 				<td>{{contact.company.name}}</td>
