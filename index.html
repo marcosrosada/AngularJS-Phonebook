@@ -36,7 +36,7 @@
 			<option value="">Selecione uma operadora</option>
 		</select>
 		<button class="btn btn-primary btn-block" ng-click="addContact(contact)" ng-disabled="!contact.name || !contact.number">Add Contact</button>
-		<button class="btn btn-danger btn-block" ng-click="removeContacts(listContacts)" ng-disabled="isSelected(listContacts)">Remove Contacts</button>
+		<button class="btn btn-danger btn-block" ng-click="removeContacts(listContacts)" ng-disabled="!isSelected(listContacts)">Remove Contacts</button>
 		{{contact}}
 	</div>
 	
