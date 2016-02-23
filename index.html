@@ -20,18 +20,18 @@
 			<tr>
 				<th></th>
 				<th></th>
-				<th>Name</th>
-				<th>Phone</th>
-				<th>Company</th>
-				<th>Data</th>
+				<th><a href="" ng-click="setOrderBy('name')">Name</a></th>
+				<th><a href="" ng-click="setOrderBy('number')">Phone</a></th>
+				<th><a href="" ng-click="setOrderBy('company.name')">Company</a></th>
+				<th><a href="" ng-click="setOrderBy('date')">Data</a></th>
 			</tr>
-			<tr ng-repeat="contact in listContacts | filter: { name: searchTerm }" ng-class="{ selected: contact.selected }">
+			<tr ng-repeat="contact in listContacts | filter: { name: searchTerm } | orderBy:fieldOrderBy:directionOrderBy" ng-class="{ selected: contact.selected }">
 				<td><input type="checkbox" ng-model="contact.selected"></td>
 				<td><div style="width: 2px; height: 22px; " ng-style="{'background-color': contact.color}"></div></td>
 				<td>{{contact.name}}</td>
 				<td>{{contact.number}}</td>
 				<td>{{contact.company.name | uppercase}}</td>
-				<td>{{contact.data | date:'dd/MM/yyyy HH:mm'}}</td>
+				<td>{{contact.date | date:'dd/MM/yyyy HH:mm'}}</td>
 			</tr>
 		</table>
 
@@ -40,7 +40,7 @@
 		<form name="contactForm">
 			<input type="text" class="form-control" ng-model="contact.name"		name="name" placeholder="Nome"  	ng-required="true" ng-minlength="10"/>
 			<input type="text" class="form-control" ng-model="contact.number"	name="phone" placeholder="Telefone" ng-required="true" ng-pattern="/^\d{4,5}-\d{4}$/"/>
-			<select class="form-control" ng-model="contact.company" ng-options="company.name group by company.category for company in companies">
+			<select class="form-control" ng-model="contact.company" ng-options="company.name group by company.category for company in companies | orderBy:[ 'category', 'name' ]">
 				<option value="">Selecione uma operadora</option>
 			</select>
 		</form>

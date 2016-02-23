@@ -5,9 +5,9 @@ app.controller("contactsCtrl", function($scope){
 	$scope.title = "Phonebook Application";
 
 	$scope.listContacts = [
-		{ name: "Marcos Rosada", number: +5521980147515, color: "#990000", data: new Date(), company: { name: "Oi", code: 14, category: "Celular"} },
-		{ name: "Talita Vespa", number: +5521979276633, color: "#000099", data: new Date(), company: { name: "Vivo", code: 15, category: "Celular"} },
-		{ name: "Joniorrrrrrr", number: +552799998888, color: "#CCCCCC", data: new Date(), company: { name: "Tim", code: 41, category: "Celular"} }
+		{ name: "Marcos Rosada", number: +5521980147515, color: "#990000", date: new Date(), company: { name: "Oi", code: 14, category: "Celular"} },
+		{ name: "Talita Vespa", number: +5521979276633, color: "#000099", date: new Date(), company: { name: "Vivo", code: 15, category: "Celular"} },
+		{ name: "Joniorrrrrrr", number: +552799998888, color: "#CCCCCC", date: new Date(), company: { name: "Tim", code: 41, category: "Celular"} }
 	];
 
 	$scope.companies = [
@@ -35,5 +35,10 @@ app.controller("contactsCtrl", function($scope){
 		return contacts.some(function (contact) {
 			return contact.selected;
 		});
-	}
+	};
+
+	$scope.setOrderBy = function (value) {
+		$scope.fieldOrderBy = value;
+		$scope.directionOrderBy = !$scope.directionOrderBy;
+	};
 });
