@@ -11,11 +11,11 @@ app.controller("contactsCtrl", function($scope){
 	];
 
 	$scope.companies = [
-		{ code: 14, name: "Oi", category: "Celular", preco: 2 },
-		{ code: 15, name: "Vivo", category: "Celular", preco: 1 },
-		{ code: 41, name: "Tim", category: "Celular", preco: 3 },
-		{ code: 25, name: "GVT", category: "Fixo", preco: 1 },
-		{ code: 21, name: "Embratel", category: "Fixo", preco: 2 }
+		{ code: 14, name: "Oi", category: "Celular", price: 2 },
+		{ code: 15, name: "Vivo", category: "Celular", price: 1 },
+		{ code: 41, name: "Tim", category: "Celular", price: 3 },
+		{ code: 25, name: "GVT", category: "Fixo", price: 1 },
+		{ code: 21, name: "Embratel", category: "Fixo", price: 2 }
 	];
 
 	$scope.addContact = function(contact){
