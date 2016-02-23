@@ -42,12 +42,12 @@
 			</select>
 		</form>
 		
-		<div ng-messages="contactForm.name.$error && contactForm.name.$dirty" class="alert alert-danger">
-			<div ng-message="required" >
+		<div ng-show="contactForm.name.$dirty" ng-messages="contactForm.name.$error">
+			<div ng-message="required" class="alert alert-danger">
 				Prencha o campo None!
 			</div>
-			<div ng-message="minlength">
-				O campo Nome deve ter no mínimo 10 caracteres!
+			<div ng-message="minlength" class="alert alert-danger">
+				O campo Nome deve ter no mínimo 10 caracteres.
 			</div>
 		</div>
 		
@@ -55,7 +55,7 @@
 			Prencha o campo Telefone!
 		</div>
 		<div ng-show="contactForm.phone.$error.pattern" class="alert alert-danger">
-			Formato do Telefone deve ser XXXXX-XXXX
+			Formato do Telefone deve ser XXXXX-XXXX.
 		</div>
 		<button class="btn btn-primary btn-block" ng-click="addContact(contact)" ng-disabled="contactForm.$invalid">Add Contact</button>
 		<button class="btn btn-danger btn-block" ng-click="removeContacts(listContacts)" ng-if="isSelected(listContacts)">Remove Contacts</button>
