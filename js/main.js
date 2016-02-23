@@ -22,4 +22,16 @@ app.controller("contactsCtrl", function($scope){
 		$scope.listContacts.push( angular.copy(contact));
 		delete $scope.contact;
 	};
+
+	$scope.removeContacts = function(contacts) {
+		$scope.listContacts = contacts.filter(function(contact) {
+			if (!contact.selected) return contact;
+		});
+	};
+
+	$scope.isSelected = function(contacts) {
+		return contacts.some(function (contact) {
+			return contact.selected;
+		});
+	}
 });

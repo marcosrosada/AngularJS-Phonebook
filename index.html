@@ -13,13 +13,15 @@
 	<div class="jumbotron">
 		<h3>{{title}}</h3>
 		
-		<table class="table table-striped">
+		<table class="table ">
 			<tr>
+				<th></th>
 				<th>Name</th>
 				<th>Phone</th>
 				<th>Company</th>
 			</tr>
-			<tr ng-repeat="contact in listContacts">
+			<tr ng-repeat="contact in listContacts" ng-class="{ selected: contact.selected }">
+				<td><input type="checkbox" ng-model="contact.selected"></td>
 				<td>{{contact.name}}</td>
 				<td>{{contact.number}}</td>
 				<td>{{contact.company.name}}</td>
@@ -34,6 +36,7 @@
 			<option value="">Selecione uma operadora</option>
 		</select>
 		<button class="btn btn-primary btn-block" ng-click="addContact(contact)" ng-disabled="!contact.name || !contact.number">Add Contact</button>
+		<button class="btn btn-danger btn-block" ng-click="removeContacts(listContacts)" ng-disabled="isSelected(listContacts)">Remove Contacts</button>
 		{{contact}}
 	</div>
 	

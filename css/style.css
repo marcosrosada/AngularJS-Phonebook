@@ -1,4 +1,4 @@
-.jumbotron{
+.jumbotron {
 	width: 400px;
 	text-align: center;
 	margin-top: 20px;
@@ -8,12 +8,16 @@
 	padding-left: 5px;
 }
 
-.table{
+.table {
 	width: 390px;
 	margin-top: 10px;
 	text-align: left;
 }
 
-.form-control{
+.form-control {
 	margin-bottom: 5px
+}
+
+.selected {
+	background-color: #add1dd;
 }
