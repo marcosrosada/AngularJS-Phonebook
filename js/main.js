@@ -10,6 +10,12 @@ app.controller("contactsCtrl", function($scope){
 		{ name: "Joniorrrrrrr", number: +552799998888 }
 	];
 
+	$scope.companies = [
+		{ code: 14, name: "Oi"},
+		{ code: 15, name: "Vivo"},
+		{ code: 41, name: "Tim"}
+	];
+
 	$scope.addContact = function(contact){
 		$scope.listContacts.push( angular.copy(contact));
 		delete $scope.contact;
