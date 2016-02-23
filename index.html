@@ -5,23 +5,30 @@
 
 	<script src="./node_modules/angular/angular.min.js"></script>
 	<script src="./js/main.js"></script>
-	<link rel="stylesheet" href="./css/style.css">
 	<link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="./css/style.css">
 </head>
 <body ng-controller="contactsCtrl">
 
 	<div class="jumbotron">
-		<h3 ng-bind="title"></h3>
+		<h3>{{title}}</h3>
 		
 		<table class="table table-striped">
 			<tr>
 				<th>Name</th>
 				<th>Phone</th>
 			</tr>
-			<tr ng-repeat="item in listContacts">
-				<td>{{item.name}}</td>
-				<td>{{item.number}}</td>
+			<tr ng-repeat="contact in listContacts">
+				<td>{{contact.name}}</td>
+				<td>{{contact.number}}</td>
 			</tr>
+		</table>
+
+		<hr />
+
+		<input type="text" class="form-control" ng-model="contact.name" 	placeholder="Name" />
+		<input type="text" class="form-control" ng-model="contact.number"	placeholder="Phone"/>
+		<button class="btn btn-primary btn-block" ng-click="addContact(contact)">Add Contact</button>
 	</div>
 	
 
