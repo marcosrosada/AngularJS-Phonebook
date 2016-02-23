@@ -21,6 +21,8 @@ app.controller("contactsCtrl", function($scope){
 	$scope.addContact = function(contact){
 		$scope.listContacts.push( angular.copy(contact));
 		delete $scope.contact;
+
+		$scope.contactForm.$setPristine();
 	};
 
 	$scope.removeContacts = function(contacts) {

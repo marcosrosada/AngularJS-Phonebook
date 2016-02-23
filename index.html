@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="Application">
 <head>
+	<meta charset="UTF-8">
 	<title>Phonebook</title>
 
 	<script src="./node_modules/angular/angular.min.js"></script>
@@ -32,17 +33,26 @@
 
 		<hr />
 
-		<input type="text" class="form-control" ng-model="contact.name" 	placeholder="Name" />
-		<input type="text" class="form-control" ng-model="contact.number"	placeholder="Phone"/>
-		<select class="form-control" ng-model="contact.company" ng-options="company.name group by company.category for company in companies">
-			<option value="">Selecione uma operadora</option>
-		</select>
-		<button class="btn btn-primary btn-block" ng-click="addContact(contact)" ng-disabled="!contact.name || !contact.number">Add Contact</button>
+		<form name="contactForm">
+			<input type="text" class="form-control" ng-model="contact.name" 	name="name" placeholder="Nome"  ng-required="true"/>
+			<input type="text" class="form-control" ng-model="contact.number"	name="phone" placeholder="Telefone" ng-required="true"/>
+			<select class="form-control" ng-model="contact.company" ng-options="company.name group by company.category for company in companies">
+				<option value="">Selecione uma operadora</option>
+			</select>
+		</form>
+		
+		<div ng-show="contactForm.name.$invalid && contactForm.name.$dirty" class="alert alert-danger">
+			Prencha o campo None!
+		</div>
+		<div ng-show="contactForm.phone.$invalid && contactForm.phone.$dirty" class="alert alert-danger">
+			Prencha o campo Telefone!
+		</div>
+		<button class="btn btn-primary btn-block" ng-click="addContact(contact)" ng-disabled="contactForm.$invalid">Add Contact</button>
 		<button class="btn btn-danger btn-block" ng-click="removeContacts(listContacts)" ng-if="isSelected(listContacts)">Remove Contacts</button>
-		{{contact}}
+		
 	</div>
 	
-	<div ng-include="'footer.html'"></div>
+	<!-- <div ng-include="'footer.html'"></div> -->
 
 </body>
 </html>
