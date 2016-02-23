@@ -34,15 +34,18 @@
 		<hr />
 
 		<form name="contactForm">
-			<input type="text" class="form-control" ng-model="contact.name" 	name="name" placeholder="Nome"  ng-required="true"/>
+			<input type="text" class="form-control" ng-model="contact.name"		name="name" placeholder="Nome"  	ng-required="true" ng-minlength="10"/>
 			<input type="text" class="form-control" ng-model="contact.number"	name="phone" placeholder="Telefone" ng-required="true"/>
 			<select class="form-control" ng-model="contact.company" ng-options="company.name group by company.category for company in companies">
 				<option value="">Selecione uma operadora</option>
 			</select>
 		</form>
 		
-		<div ng-show="contactForm.name.$invalid && contactForm.name.$dirty" class="alert alert-danger">
+		<div ng-show="contactForm.name.$error.required && contactForm.name.$dirty" class="alert alert-danger">
 			Prencha o campo None!
+		</div>
+		<div ng-show="contactForm.name.$error.minlength" class="alert alert-danger">
+			O campo Nome deve ter no mínimo 10 caracteres!
 		</div>
 		<div ng-show="contactForm.phone.$invalid && contactForm.phone.$dirty" class="alert alert-danger">
 			Prencha o campo Telefone!
