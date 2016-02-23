@@ -13,7 +13,7 @@
 	<div class="jumbotron">
 		<h3>{{title}}</h3>
 		
-		<table class="table ">
+		<table ng-show="listContacts.length > 0" class="table ">
 			<tr>
 				<th></th>
 				<th></th>
@@ -38,7 +38,7 @@
 			<option value="">Selecione uma operadora</option>
 		</select>
 		<button class="btn btn-primary btn-block" ng-click="addContact(contact)" ng-disabled="!contact.name || !contact.number">Add Contact</button>
-		<button class="btn btn-danger btn-block" ng-click="removeContacts(listContacts)" ng-disabled="!isSelected(listContacts)">Remove Contacts</button>
+		<button class="btn btn-danger btn-block" ng-click="removeContacts(listContacts)" ng-if="isSelected(listContacts)">Remove Contacts</button>
 		{{contact}}
 	</div>
 	
