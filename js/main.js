@@ -1,23 +1,25 @@
 app = angular.module("Application", ["ngMessages"]);
 
-app.controller("contactsCtrl", function($scope){
+app.controller("contactsCtrl", function($scope, $http){
 
 	$scope.title = "Phonebook Application";
 
-	$scope.listContacts = [
-		{ name: "Marcos Rosada", number: +5521980147515, color: "#990000", date: new Date(), company: { name: "Oi", code: 14, category: "Celular"} },
-		{ name: "Talita Vespa", number: +5521979276633, color: "#000099", date: new Date(), company: { name: "Vivo", code: 15, category: "Celular"} },
-		{ name: "Joniorrrrrrr", number: +552799998888, color: "#CCCCCC", date: new Date(), company: { name: "Tim", code: 41, category: "Celular"} }
-	];
+	$scope.listContacts = [];
+	$scope.companies 	= [];
 
-	$scope.companies = [
-		{ code: 14, name: "Oi", category: "Celular", price: 2 },
-		{ code: 15, name: "Vivo", category: "Celular", price: 1 },
-		{ code: 41, name: "Tim", category: "Celular", price: 3 },
-		{ code: 25, name: "GVT", category: "Fixo", price: 1 },
-		{ code: 21, name: "Embratel", category: "Fixo", price: 2 }
-	];
+	var getListContacts = function (){
+		$http.get("http://localhost:3000/contacts")
+			.success(function(data) {
+				$scope.listContacts = data;
+			});
+	};
 
+	var getListCompanies = function () {
+		$http.get("http://localhost:3000/companies")
+			.success(function (data) {
+				$scope.companies = data;
+			});
+	};
 	$scope.addContact = function(contact){
 		$scope.listContacts.push( angular.copy(contact));
 		delete $scope.contact;
@@ -41,4 +43,7 @@ app.controller("contactsCtrl", function($scope){
 		$scope.fieldOrderBy = value;
 		$scope.directionOrderBy = !$scope.directionOrderBy;
 	};
+
+	getListContacts();
+	getListCompanies();
 });
