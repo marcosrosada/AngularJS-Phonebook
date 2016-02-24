@@ -1,13 +1,18 @@
-var express = require('express');
-var app = express();
+var express = require('express'),
+    bodyParser = require('body-parser'),
+ 	app = express();
 
 app.use(express.static(__dirname + '/public'));
-//app.use(express.bodyParser());
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// parse application/json
+app.use(bodyParser.json());
+
 
 var contacts = [
-	{ name: "Marcos Rosada", number: "+5521980147515", color: "#990000", date: new Date(), company: { name: "Oi", code: 14, category: "Celular"} },
-	{ name: "Talita Vespa", number: "+5521979276633", color: "#000099", date: new Date(), company: { name: "Vivo", code: 15, category: "Celular"} },
-	{ name: "Joniorrrrrrr", number: "+552799998888", color: "#CCCCCC", date: new Date(), company: { name: "Tim", code: 41, category: "Celular"} }
+	{ name: "Marcos Rosada", number: "+5521980147515", date: new Date(), company: { code: 14, name: "Oi", category: "Celular"} },
+	{ name: "Talita Vespa", number: "+5521979276633", date: new Date(), company: { code: 15, name: "Vivo", category: "Celular"} },
+	{ name: "Joniorrrrrrr", number: "+552799998888", date: new Date(), company: { code: 41, name: "Tim", category: "Celular"} }
 ];
 var companies = [
 	{ code: 14, name: "Oi", category: "Celular", price: 2 },
@@ -31,14 +36,14 @@ app.all('*', function(req, res, next) {
 });
 
 app.get('/contacts', function(req, res) {
-  res.json(contacts);
+  	res.json(contacts);
 });
 
 app.post('/contacts', function(req, res) {
-  contacts.push(req.body);
-  res.json(true);
+  	contacts.push(req.body);
+	res.json(true);
 });
 
 app.get('/companies', function(req, res) {
-  res.json(companies);
+  	res.json(companies);
 });

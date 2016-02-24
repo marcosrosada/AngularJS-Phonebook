@@ -21,10 +21,12 @@ app.controller("contactsCtrl", function($scope, $http){
 			});
 	};
 	$scope.addContact = function(contact){
-		$scope.listContacts.push( angular.copy(contact));
-		delete $scope.contact;
-
-		$scope.contactForm.$setPristine();
+		contact.date = new Date();
+		$http.post("http://localhost:3000/contacts", contact).success(function (data) {
+			delete $scope.contact;
+			$scope.contactForm.$setPristine();
+			getListContacts();
+		});
 	};
 
 	$scope.removeContacts = function(contacts) {
@@ -35,7 +37,7 @@ app.controller("contactsCtrl", function($scope, $http){
 
 	$scope.isSelected = function(contacts) {
 		return contacts.some(function (contact) {
-			return contact.selected;
+			return false;//contact.selected;
 		});
 	};
 
