@@ -1,5 +1,3 @@
-app = angular.module("Application", ["ngMessages"]);
-
 app.controller("contactsCtrl", function($scope, $http){
 
 	$scope.title = "Phonebook Application";
