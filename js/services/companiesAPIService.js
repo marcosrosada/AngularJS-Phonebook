@@ -1,5 +1,5 @@
-app.service("companiesAPI", function ($http) {
+app.service("companiesAPI", function ($http, config) {
 	this.getCompanies = function () {
-		return $http.get("http://localhost:3000/companies");
+		return $http.get(config.baseUrl + "/companies");
 	};
 });

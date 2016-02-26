@@ -1,11 +1,11 @@
-app.factory("contactAPI", function ($http) {
+app.factory("contactAPI", function ($http, config) {
 
 	var _getContacts = function () {
-		return $http.get("http://localhost:3000/contacts");
+		return $http.get(config.baseUrl + "/contacts");
 	};
 
 	var _saveContact = function (contact) {
-		return $http.post("http://localhost:3000/contacts", contact);
+		return $http.post(config.baseUrl + "/contacts", contact);
 	}
 	return {
 		getContacts : _getContacts,
