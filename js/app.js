@@ -1,2 +1,2 @@
-app = angular.module("Application", ["ngMessages"]);
+app = angular.module("AppPhoneBook", ["ngMessages"]);
 

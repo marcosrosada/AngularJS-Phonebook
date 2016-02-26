@@ -1,4 +1,4 @@
-app.controller("contactsCtrl", function($scope, $http){
+app.controller("contactsCtrl", function($scope, contactAPI, companiesAPI){
 
 	$scope.title = "Phonebook Application";
 
@@ -6,21 +6,19 @@ app.controller("contactsCtrl", function($scope, $http){
 	$scope.companies 	= [];
 
 	var getListContacts = function (){
-		$http.get("http://localhost:3000/contacts")
-			.success(function(data) {
-				$scope.listContacts = data;
-			});
+		contactAPI.getContacts().success(function(data) {
+			$scope.listContacts = data;
+		});
 	};
 
 	var getListCompanies = function () {
-		$http.get("http://localhost:3000/companies")
-			.success(function (data) {
+		companiesAPI.getCompanies().success(function (data) {
 				$scope.companies = data;
 			});
 	};
 	$scope.addContact = function(contact){
 		contact.date = new Date();
-		$http.post("http://localhost:3000/contacts", contact).success(function (data) {
+		contactAPI.saveContact(contact).success(function (data) {
 			delete $scope.contact;
 			$scope.contactForm.$setPristine();
 			getListContacts();
