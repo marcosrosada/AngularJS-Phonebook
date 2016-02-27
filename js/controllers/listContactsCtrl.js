@@ -1,7 +1,6 @@
-app.controller("contactsCtrl", function($scope, contactAPI, companiesAPI){
+app.controller("contactsCtrl", function($scope, contactAPI, companiesAPI, serialGenerator){
 
-	$scope.title = "Phonebook Application";
-
+	$scope.title 		= "Phonebook Application";
 	$scope.listContacts = [];
 	$scope.companies 	= [];
 
@@ -17,6 +16,7 @@ app.controller("contactsCtrl", function($scope, contactAPI, companiesAPI){
 			});
 	};
 	$scope.addContact = function(contact){
+		contact.serial = serialGenerator.generate();
 		contact.date = new Date();
 		contactAPI.saveContact(contact).success(function (data) {
 			delete $scope.contact;
