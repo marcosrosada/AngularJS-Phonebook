@@ -11,8 +11,8 @@ app.use(bodyParser.json());
 
 var contacts = [
 	{ name: "Marcos Rosada", number: "+5521980147515", date: new Date(), company: { code: 14, name: "Oi", category: "Celular"} },
-	{ name: "Talita Vespa", number: "+5521979276633", date: new Date(), company: { code: 15, name: "Vivo", category: "Celular"} },
-	{ name: "Joniorrrrrrr", number: "+552799998888", date: new Date(), company: { code: 41, name: "Tim", category: "Celular"} }
+	{ name: "TALITA VESPA", number: "+5521979276633", date: new Date(), company: { code: 15, name: "Vivo", category: "Celular"} },
+	{ name: "joniorrrrrr souza", number: "+552799998888", date: new Date(), company: { code: 41, name: "Tim", category: "Celular"} }
 ];
 var companies = [
 	{ code: 14, name: "Oi", category: "Celular", price: 2 },
