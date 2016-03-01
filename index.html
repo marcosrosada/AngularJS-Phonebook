@@ -26,7 +26,10 @@
 	<div class="jumbotron">
 		<h3>{{title}}</h3>
 		
-		<ui-alert title="Ops, aconteceu alguma problema!" message="error"></ui-alert>
+		<ui-alert title="Ops, aconteceu alguma problema!" >
+			{{error}}
+		</ui-alert>
+
 		<input type="text" class="form-control" ng-model="searchTerm" placeholder="Digite um nome para buscar ..." />
 		<table ng-show="listContacts.length > 0" class="table ">
 			<tr>
