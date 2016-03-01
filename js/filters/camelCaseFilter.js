@@ -1,4 +1,4 @@
-app.filter("camelCase", function () {
+angular.module("AppPhoneBook").filter("camelCase", function () {
 	return function (input) {
 		var listNames = input.split(" ");
 		var listNamesFormated = listNames.map(function (name) {

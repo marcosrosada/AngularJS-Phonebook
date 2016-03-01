@@ -1,4 +1,4 @@
-app.controller("contactsCtrl", function($scope, contactAPI, companiesAPI, serialGenerator){
+angular.module("AppPhoneBook").controller("contactsCtrl", function($scope, contactAPI, companiesAPI, serialGenerator){
 
 	$scope.title 		= "Phonebook Application";
 	$scope.listContacts = [];

@@ -1,4 +1,4 @@
-app.provider("serialGenerator", function () {
+angular.module("AppPhoneBook").provider("serialGenerator", function () {
 	var _length = 10;
 
 	this.getLength = function () {

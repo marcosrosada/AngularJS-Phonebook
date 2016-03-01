@@ -1,4 +1,4 @@
-app.factory("contactAPI", function ($http, config) {
+angular.module("AppPhoneBook").factory("contactAPI", function ($http, config) {
 
 	var _getContacts = function () {
 		return $http.get(config.baseUrl + "/contacts");

@@ -1,4 +1,4 @@
-app.service("companiesAPI", function ($http, config) {
+angular.module("AppPhoneBook").service("companiesAPI", function ($http, config) {
 	this.getCompanies = function () {
 		return $http.get(config.baseUrl + "/companies");
 	};

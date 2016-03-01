@@ -1,4 +1,4 @@
-app.filter("ellipsis", function () {
+angular.module("AppPhoneBook").filter("ellipsis", function () {
 	return function (input, size) {
 		if (input.length <= size) return input;
 
