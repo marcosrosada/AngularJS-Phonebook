@@ -1,6 +1,6 @@
 app.directive("uiAlert", function () {
 
 	return {
-		template: "<div>Directive Templeate Working!!!</div>"
+		templateUrl: "./view/alert.html"
 	};
 });
