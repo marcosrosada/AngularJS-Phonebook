@@ -7,6 +7,8 @@ app.controller("contactsCtrl", function($scope, contactAPI, companiesAPI, serial
 	var getListContacts = function (){
 		contactAPI.getContacts().success(function(data) {
 			$scope.listContacts = data;
+		}).error( function(data, status) {
+			$scope.error = "Não foi possível carregar os dados!";
 		});
 	};
 

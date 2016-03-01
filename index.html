@@ -6,6 +6,7 @@
 
 	<link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
 	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="./css/ui.css">
 	<script src="./node_modules/angular/angular.min.js"></script>
 	<script src="./js/angular-locale_pt-br.js"></script>
 	<script src="./node_modules/angular-messages/angular-messages.js"></script>
@@ -18,12 +19,14 @@
 	<script src="./js/value/configValue.js"></script>
 	<script src="./js/filters/camelCaseFilter.js"></script>
 	<script src="./js/filters/ellipsisFilter.js"></script>
+	<script src="./js/directives/uiAlertDirective.js"></script>
 </head>
 <body ng-controller="contactsCtrl">
 
 	<div class="jumbotron">
 		<h3>{{title}}</h3>
 		
+		<div ui-alert></div>
 		<input type="text" class="form-control" ng-model="searchTerm" placeholder="Digite um nome para buscar ..." />
 		<table ng-show="listContacts.length > 0" class="table ">
 			<tr>
