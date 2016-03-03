@@ -20,13 +20,14 @@
 	<script src="./js/filters/camelCaseFilter.js"></script>
 	<script src="./js/filters/ellipsisFilter.js"></script>
 	<script src="./js/directives/uiAlertDirective.js"></script>
+	<script src="./js/directives/uiDateDirective.js"></script>
 </head>
 <body ng-controller="contactsCtrl">
 
 	<div class="jumbotron">
 		<h3>{{title}}</h3>
 		
-		<ui-alert title="Ops, aconteceu alguma problema!" >
+		<ui-alert title="Ops, aconteceu alguma problema!" ng-if="error">
 			{{error}}
 		</ui-alert>
 
@@ -53,6 +54,7 @@
 		<form name="contactForm">
 			<input type="text" class="form-control" ng-model="contact.name"		name="name" placeholder="Nome"  	ng-required="true" ng-minlength="10"/>
 			<input type="text" class="form-control" ng-model="contact.number"	name="phone" placeholder="Telefone" ng-required="true" ng-pattern="/^\d{4,5}-\d{4}$/"/>
+			<input type="text" class="form-control" ng-model="contact.data"		name="data" placeholder="Data" ui-date/>
 			<select class="form-control" ng-model="contact.company" ng-options="company.name + ' ( ' + (company.price | currency) + ' )' group by company.category for company in companies | orderBy:[ 'category', 'name' ]">
 				<option value="">Selecione uma operadora</option>
 			</select>
