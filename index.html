@@ -54,7 +54,8 @@
 		<form name="contactForm">
 			<input type="text" class="form-control" ng-model="contact.name"		name="name" placeholder="Nome"  	ng-required="true" ng-minlength="10"/>
 			<input type="text" class="form-control" ng-model="contact.number"	name="phone" placeholder="Telefone" ng-required="true" ng-pattern="/^\d{4,5}-\d{4}$/"/>
-			<input type="text" class="form-control" ng-model="contact.data"		name="data" placeholder="Data" ui-date/>
+			{{contact.date}}
+			<input type="text" class="form-control" ng-model="contact.date"		name="date" placeholder="Data" ui-date/>
 			<select class="form-control" ng-model="contact.company" ng-options="company.name + ' ( ' + (company.price | currency) + ' )' group by company.category for company in companies | orderBy:[ 'category', 'name' ]">
 				<option value="">Selecione uma operadora</option>
 			</select>

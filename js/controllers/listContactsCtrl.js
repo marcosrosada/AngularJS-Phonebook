@@ -3,6 +3,9 @@ angular.module("AppPhoneBook").controller("contactsCtrl", function($scope, conta
 	$scope.title 		= "Phonebook Application";
 	$scope.listContacts = [];
 	$scope.companies 	= [];
+	$scope.contact 		= {
+		date: "1013392800000"
+	};
 
 	var getListContacts = function (){
 		contactAPI.getContacts().success(function(data) {
